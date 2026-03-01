@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anime Quote Generator</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/script.js" defer></script>
-    <script type="module" src="./js/firebase.js"></script>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <script type="module" src="./js/script.js"></script>
     <!-- Google Font - Exo 2 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,11 @@
     <h3>Daily inspiration from iconic anime characters</h3>
 
     <!-- Quote Container -->
-    <div class="quote-container"></div>
+    <div class="quote-container">
+      <p id="quote"></p>
+      <p id="quote-info"></p>
+      <button id="next-quote"></button>
+    </div>
 
     <footer>
       <p>&copy 2026 Abdul Moiz</p>
