@@ -15,7 +15,7 @@ body {
 /* Site description */
 h3 {
   font-size: 30px;
-  color: gray;
+  color: black;
   text-align: center;
 }
 
@@ -47,7 +47,7 @@ body.dark-mode {
 }
 
 body.dark-mode h3 {
-  color: lightgray;
+  color: white;
 }
 
 body.dark-mode .quote-container {
