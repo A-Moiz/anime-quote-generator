@@ -6,10 +6,12 @@ const appearanceBtn = document.getElementById("appearance-btn");
 const quoteTxt = document.getElementById("quote");
 const quoteInfo = document.getElementById("quote-info");
 const nextQuote = document.getElementById("next-quote");
+const quoteImg = document.getElementById("quote-img");
 
 // Event listeners
 appearanceBtn.addEventListener("click", changeAppearance);
-nextQuote.addEventListener("click", getNextQuote);
+nextQuote.addEventListener("click", displayQuote);
+displayQuote();
 
 // Toggle website appearance
 function changeAppearance() {
@@ -23,10 +25,11 @@ function changeAppearance() {
   }
 }
 
-// Next Quote
-async function getNextQuote() {
+// Display Quote
+async function displayQuote() {
   let quote = await getRandomQuote();
-  console.log(quote);
   quoteTxt.textContent = quote.quote;
   quoteInfo.textContent = `${quote.character} - ${quote.anime}`;
+  quoteImg.src = quote.characterImg;
+  quoteImg.classList = "character-img";
 }
