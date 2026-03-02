@@ -10,6 +10,8 @@ const quoteImg = document.getElementById("quote-img");
 
 // Quotes.html
 const allQuotesContainer = document.getElementById("all-quotes-container");
+const searchInput = document.getElementById("search-input");
+let allQuotes = [];
 
 // Event listeners
 if (appearanceBtn) {
@@ -22,7 +24,22 @@ if (nextQuote && quoteTxt && quoteInfo && quoteImg) {
 }
 
 if (allQuotesContainer) {
-  displayAllQuotes();
+  fetchAllQuotes();
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", (e) => {
+    const searchValue = e.target.value.toLowerCase().trim();
+
+    const filteredQuotes = allQuotes.filter((quote) => {
+      return (
+        quote.character.toLowerCase().includes(searchValue) ||
+        quote.anime.toLowerCase().includes(searchValue)
+      );
+    });
+
+    renderQuotes(filteredQuotes);
+  });
 }
 
 // Toggle website appearance
@@ -45,37 +62,33 @@ async function displayQuote() {
   quoteImg.classList = "character-img";
 }
 
-// Display all quotes
-async function displayAllQuotes() {
-  const quotes = await getAllQuotes();
+// Fetch all quotes
+async function fetchAllQuotes() {
+  allQuotes = await getAllQuotes();
+  renderQuotes(allQuotes);
+}
 
+// Display the fetched quotes
+function renderQuotes(quotes) {
   allQuotesContainer.innerHTML = "";
 
   quotes.forEach((quote) => {
-    // Wrapper
     const quoteItem = document.createElement("div");
     quoteItem.classList.add("quote-item");
 
-    // Image
     const img = document.createElement("img");
     img.src = quote.characterImg;
     img.classList.add("quote-item-img");
 
-    // Quote
     const quoteText = document.createElement("p");
     quoteText.textContent = `${quote.quote}`;
     quoteText.classList.add("quote-item-text");
 
-    // Quote info
     const quoteInfo = document.createElement("p");
     quoteInfo.textContent = `${quote.character} - ${quote.anime}`;
     quoteInfo.classList.add("quote-item-info");
 
-    // Append elements
-    quoteItem.appendChild(img);
-    quoteItem.appendChild(quoteText);
-    quoteItem.appendChild(quoteInfo);
-
+    quoteItem.append(img, quoteText, quoteInfo);
     allQuotesContainer.appendChild(quoteItem);
   });
 }
