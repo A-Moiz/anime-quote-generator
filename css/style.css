@@ -26,6 +26,7 @@ button {
   cursor: pointer;
   font-size: 20px;
   font-family: "Exo 2", cursive;
+  margin-bottom: 70px;
 }
 
 button:hover {
@@ -45,12 +46,13 @@ button:hover {
 /* Generated Quote container */
 .quote-container {
   margin: auto;
-  width: 90%;
+  width: 75%;
   height: 500px;
   margin-bottom: 75px;
   border: solid 5px black;
   box-shadow: 10px 10px black;
   text-align: center;
+  padding: 20px;
 }
 
 /* Quote styling */
@@ -65,8 +67,8 @@ button:hover {
 }
 
 .character-img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 }
 
 /* Footer */

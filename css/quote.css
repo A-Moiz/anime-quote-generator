@@ -3,6 +3,11 @@ h2 {
   text-align: center;
 }
 
+/* Info */
+.user-info {
+  text-align: center;
+}
+
 /* Search Bar */
 /* From Uiverse.io by Galahhad */
 .search-label {
@@ -88,6 +93,10 @@ h2 {
 }
 
 /* Quotes */
+.all-quotes-container {
+  margin-bottom: 100px;
+}
+
 .quote-item {
   border: solid 2px gray;
   border-radius: 10px;
@@ -109,4 +118,9 @@ h2 {
 .quote-item-img {
   width: 100px;
   height: 100px;
+}
+
+/* Dark mode */
+body.dark-mode a {
+  color: skyblue;
 }
