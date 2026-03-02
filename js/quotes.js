@@ -25,3 +25,13 @@ export async function getRandomQuote() {
 
   return quotes[randomIndex];
 }
+
+// Get all quotes from Firebase
+export async function getAllQuotes() {
+  const querySnapshot = await getDocs(collection(db, "anime-quotes"));
+  const quotes = querySnapshot.docs.map((doc) => doc.data());
+
+  if (quotes.length === 0) return null;
+
+  return quotes;
+}

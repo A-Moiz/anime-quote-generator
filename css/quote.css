@@ -1,15 +1,6 @@
-/* Body */
-body {
-  margin: 0;
-  font-family: "Exo 2";
-  padding: 10px;
-}
-
-/* Appearance toggle icon */
-.appearance-btn {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
+/* Title */
+h2 {
+  text-align: center;
 }
 
 /* Search Bar */
@@ -96,23 +87,26 @@ body {
   color: transparent;
 }
 
-/* Footer */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+/* Quotes */
+.quote-item {
+  border: solid 2px gray;
+  border-radius: 10px;
   padding: 10px;
-  border-top: solid 1px black;
-  text-align: center;
+  margin: 10px 0;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  background-color: #333;
-  color: white;
+.quote-item-text {
+  font-family: "Gruppo", cursive;
+  font-size: 25px;
 }
 
-body.dark-mode .search-label {
-  border: 2px solid gray;
+.quote-item-info {
+  font-family: "Exo 2", cursive;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quote-item-img {
+  width: 100px;
+  height: 100px;
 }
